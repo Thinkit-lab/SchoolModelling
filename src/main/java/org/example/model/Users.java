@@ -1,11 +1,13 @@
 package org.example.model;
 
+import org.example.enums.GENDER;
+
 public class Users {
     private String name;
     private int age;
-    private String gender;
+    private GENDER gender;
 
-    public Users(String name, int age, String gender) {
+    public Users(String name, int age, GENDER gender) {
         this.name = name;
         this.age = age;
         this.gender = gender;
@@ -30,11 +32,11 @@ public class Users {
         this.age = age;
     }
 
-    public String getGender() {
+    public GENDER getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(GENDER gender) {
         this.gender = gender;
     }
 

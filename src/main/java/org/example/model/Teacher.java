@@ -1,11 +1,13 @@
 package org.example.model;
 
+import org.example.enums.GENDER;
+
 import java.util.List;
 
 public class Teacher extends Staff{
     List<Course> teacherCourseList;
 
-    public Teacher(String name, int age, String gender, boolean isPresent, List<Course> course) {
+    public Teacher(String name, int age, GENDER gender, boolean isPresent, List<Course> course) {
         super(name, age, gender, isPresent);
         this.teacherCourseList = course;
     }

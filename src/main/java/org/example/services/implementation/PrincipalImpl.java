@@ -16,26 +16,14 @@ public class PrincipalImpl implements PrincipalServices {
         return singleInstance;
     }
 
-    public String canExpelStudent(String behaviour, boolean violateRule, School school){
-        List<Student> studentList = school.getStudentList();
-        Staff principal = school.getPrincipal();
-        for(int i=0; i<studentList.size(); i++){
-            if(studentList.get(i).getBehaviour().equalsIgnoreCase(behaviour) && studentList.get(i).isViolateRule() == violateRule){
-                return principal.getName() + " cannot expel " + studentList.get(i).getName();
-            }
-            else if(studentList.get(i).getBehaviour().equalsIgnoreCase(behaviour) && studentList.get(i).isViolateRule() != violateRule) {
-                return principal.getName() + " issues warning to " + studentList.get(i).getName();
-            }
-            else if (!studentList.get(i).getBehaviour().equalsIgnoreCase(behaviour) && studentList.get(i).isViolateRule() != violateRule){
-                return principal.getName() + " can expel " + studentList.get(i).getName();
-            }
+    public String canExpelStudent(String behaviour, boolean violateRule, Principal principal, Student student){
+        if(student.getBehaviour() == behaviour && student.isViolateRule() == violateRule){
+            return principal.getName() + " cannot expel " + student.getName();
         }
-        return "";
+        return principal.getName() + " can expel " + student.getName();
     }
 
-    public String canAdmitApplicant(School school) {
-        Applicant applicant = school.getApplicant();
-        Staff principal = school.getPrincipal();
+    public String canAdmitApplicant(Applicant applicant, Staff principal) {
         final int maxAge = 15;
         final int minAge = 9;
         if (applicant.getAge() > maxAge || applicant.getAge() < minAge) {

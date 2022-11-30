@@ -1,17 +1,19 @@
 package org.example.model;
 
+import org.example.enums.GENDER;
+
 import java.util.List;
 
 public class Principal extends Staff{
     List<Student> studentList;
     List<Classes> classesList;
 
-    public Principal(String name, int age, String gender, boolean isPresent, List<Student> studentList, List<Classes> classesList) {
+    public Principal(String name, int age, GENDER gender, boolean isPresent, List<Student> studentList, List<Classes> classesList) {
         super(name, age, gender, isPresent);
         this.studentList = studentList;
         this.classesList = classesList;
     }
-    public Principal(String name, int age, String gender, boolean isPresent) {
+    public Principal(String name, int age, GENDER gender, boolean isPresent) {
         super(name, age, gender, isPresent);
     }
     public Principal(){

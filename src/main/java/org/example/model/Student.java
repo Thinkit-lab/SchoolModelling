@@ -16,7 +16,9 @@ public class Student extends Users{
         this.violateRule = violateRule;
     }
 
-    public Student(){
+    public Student(String name, String behaviour, boolean violateRule){
+        this.behaviour = behaviour;
+        this.violateRule = violateRule;
 
     }
 

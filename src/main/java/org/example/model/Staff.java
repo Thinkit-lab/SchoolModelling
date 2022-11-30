@@ -1,9 +1,11 @@
 package org.example.model;
 
+import org.example.enums.GENDER;
+
 public abstract class Staff extends Users{
     private boolean isPresent;
 
-    public Staff(String name, int age, String gender, boolean isPresent) {
+    public Staff(String name, int age, GENDER gender, boolean isPresent) {
         super(name, age, gender);
         this.isPresent = isPresent;
     }
