@@ -1,5 +1,7 @@
 package org.example.model;
 
+import org.example.enums.GENDER;
+
 import java.util.List;
 
 public class Student extends Users{
@@ -8,7 +10,7 @@ public class Student extends Users{
     private String behaviour;
     private boolean violateRule;
 
-    public Student(String name, int age, String gender, String studentClass, List<Course> courseList, String behaviour, boolean violateRule){
+    public Student(String name, int age, GENDER gender, String studentClass, List<Course> courseList, String behaviour, boolean violateRule){
         super(name, age, gender);
         this.studentClass = studentClass;
         this.courseList = courseList;

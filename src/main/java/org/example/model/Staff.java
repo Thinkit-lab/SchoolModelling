@@ -9,6 +9,9 @@ public abstract class Staff extends Users{
         super(name, age, gender);
         this.isPresent = isPresent;
     }
+    public Staff(String name){
+        super(name);
+    }
 
     public Staff(){
 

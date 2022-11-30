@@ -12,6 +12,10 @@ public class Users {
         this.age = age;
         this.gender = gender;
     }
+
+    public Users(String name){
+        this.name = name;
+    }
     public Users(){
 
     }

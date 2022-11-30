@@ -5,12 +5,22 @@ import org.example.model.School;
 import org.example.model.Teacher;
 
 import java.util.List;
+import java.util.Objects;
+
 
 public class TeacherImpl {
-    public String canTeachCourse(String courseCode, School school, Teacher teacher) {
-        List<Course> courseList = school.getCourseList();
+    private static TeacherImpl singleInstance = new TeacherImpl();
+
+    public static TeacherImpl getSingleInstance() {
+        if (singleInstance == null) {
+            singleInstance = new TeacherImpl();
+
+        }
+        return singleInstance;
+    }
+    public String canTeachCourse(String courseCode, List<Course> courseList, Teacher teacher) {
         for(int i=0; i<courseList.size(); i++ ) {
-            if(teacher.getCourse().get(i).getCourseCode() == courseCode){
+            if(Objects.equals(teacher.getCourse().get(i).getCourseCode(), courseCode)){
                 return teacher.getName() + " can teach " + courseCode;
             }
 

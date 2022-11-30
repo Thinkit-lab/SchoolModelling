@@ -24,10 +24,10 @@ public class MySchool {
         List<Course> scienceCourseList = new ArrayList<>(Arrays.asList(math, english));
         List<Course> artCourseList = new ArrayList<>(Arrays.asList(government, history));
 
-        Student s1 = new Student("Olukunle", 30, "M", "100L", scienceCourseList, "Good", false);
-        Student s2 = new Student("Oladele", 32, "M", "100L", scienceCourseList, "Good", false);
-        Student s3 = new Student("Stephen", 30, "M", "100L", artCourseList, "Good", false);
-        Student s4 = new Student("Thompson", 35, "M", "100L", artCourseList, "Good", false);
+        Student s1 = new Student("Olukunle", 30, GENDER.MALE, "100L", scienceCourseList, "Good", false);
+        Student s2 = new Student("Oladele", 32, GENDER.FEMALE, "100L", scienceCourseList, "Good", false);
+        Student s3 = new Student("Stephen", 30, GENDER.MALE, "100L", artCourseList, "Good", false);
+        Student s4 = new Student("Thompson", 35, GENDER.MALE, "100L", artCourseList, "Good", false);
         List<Student> scienceStudentList = new ArrayList<>();
         scienceStudentList.addAll(Arrays.asList(s1,s2));
         List<Student> artStudentList = new ArrayList<>();
@@ -47,7 +47,7 @@ public class MySchool {
         Applicant applicant1 = new Applicant("Adebisi", 30, GENDER.MALE, classesList);
 
         School school = new School("SOS",teacherList,scienceStudentList,classesList,scienceCourseList,principal,applicant1);
-        System.out.println(teacherImpl.canTeachCourse("ENG102", school, teacher1));
+        System.out.println(teacherImpl.canTeachCourse("ENG102", scienceCourseList, teacher1));
         System.out.println(studentImpl.canTakeCourse("GOV101", school, s1));
         System.out.println(principalImpl.canExpelStudent("good", false, principal, s1));
         System.out.println(principalImpl.canExpelStudent("bad", false, principal, s2));
