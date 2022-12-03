@@ -6,6 +6,9 @@ import org.example.services.implementation.PrincipalImpl;
 import org.example.services.implementation.StudentImpl;
 import org.example.services.implementation.TeacherImpl;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -52,5 +55,29 @@ public class MySchool {
         System.out.println(principalImpl.canExpelStudent("good", false, principal, s1));
         System.out.println(principalImpl.canExpelStudent("bad", false, principal, s2));
         principalImpl.canAdmitApplicant(applicant1, principal);
+
+        File file = new File("demo.txt");
+
+        try{
+            FileInputStream fileInputStream = new FileInputStream(file);
+            int data;
+            while((data = fileInputStream.read()) != -1){
+                System.out.print((char) data);
+            }
+            System.out.println();
+            fileInputStream.close();
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+        try{
+            FileOutputStream fileOutputStream = new FileOutputStream("demo2.txt", true);
+            fileOutputStream.write(66);
+            System.out.println("File saved");
+            fileOutputStream.close();
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
     }
 }

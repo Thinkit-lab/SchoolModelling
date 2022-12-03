@@ -25,7 +25,7 @@ public class TeacherTest {
     teacherImpl = TeacherImpl.getSingleInstance();
     course1 = new Course("Mathematics", "MTH101");
     course2 = new Course("English", "ENG101");
-    List<Course>  courseList = new ArrayList<>(Arrays.asList(course1, course2));
+    courseList = new ArrayList<>(Arrays.asList(course1, course2));
     teacher1 = new Teacher("Mr. Falolu", courseList);
     teacher2 = new Teacher("Mrs. Fayemi", courseList);
 
@@ -33,7 +33,7 @@ public class TeacherTest {
 @Test
 @DisplayName("A teacher can take a course if the course parameter is among the teacher's course list")
     void canTeachCourse(){
-        String expected = teacher1.getName() + " can teach " + course1;
+        String expected = teacher1.getName() + " can teach " + course1.getCourseCode();
         assertEquals(expected, teacherImpl.canTeachCourse("MTH101", courseList, teacher1));
 }
 }
