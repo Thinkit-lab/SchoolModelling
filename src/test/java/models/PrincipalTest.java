@@ -1,6 +1,7 @@
 package models;
 
 import org.example.enums.GENDER;
+import org.example.enums.STAFF;
 import org.example.model.*;
 import org.example.services.implementation.PrincipalImpl;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,7 +20,7 @@ class PrincipalTest {
 
     @BeforeEach
     void setUp() {
-        principal = new Principal("Olaoye", 54, GENDER.MALE, true);
+        principal = new Principal("Olaoye", 54, GENDER.MALE, true, STAFF.PRINCIPAL);
         principalImpl = PrincipalImpl.getSingleInstance();
         applicant1 = new Applicant("Obi", 14, GENDER.MALE);
         applicant2 = new Applicant("Obi", 25, GENDER.MALE);

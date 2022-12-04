@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.enums.GENDER;
+import org.example.enums.STAFF;
 import org.example.model.*;
 import org.example.services.implementation.PrincipalImpl;
 import org.example.services.implementation.StudentImpl;
@@ -41,12 +42,12 @@ public class MySchool {
         List<Classes> classesList = new ArrayList<>();
         classesList.addAll(Arrays.asList(science,art));
 
-        Teacher teacher1 = new Teacher("Johnson", 35, GENDER.MALE, true, scienceCourseList);
-        Teacher teacher2 = new Teacher("Daniel", 45, GENDER.MALE, true, artCourseList);
+        Teacher teacher1 = new Teacher("Johnson", 35, GENDER.MALE, true, STAFF.TEACHER, scienceCourseList);
+        Teacher teacher2 = new Teacher("Daniel", 45, GENDER.MALE, true, STAFF.TEACHER, artCourseList);
         List<Teacher> teacherList = new ArrayList<>();
         teacherList.addAll(Arrays.asList(teacher2, teacher1));
 
-        Principal principal = new Principal("Mr. Fadipe", 50, GENDER.MALE, true, scienceStudentList,classesList);
+        Principal principal = new Principal("Mr. Fadipe", 50, GENDER.MALE, true, STAFF.PRINCIPAL,scienceStudentList,classesList);
         Applicant applicant1 = new Applicant("Adebisi", 30, GENDER.MALE, classesList);
 
         School school = new School("SOS",teacherList,scienceStudentList,classesList,scienceCourseList,principal,applicant1);

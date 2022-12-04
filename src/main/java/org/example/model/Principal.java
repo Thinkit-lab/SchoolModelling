@@ -1,6 +1,7 @@
 package org.example.model;
 
 import org.example.enums.GENDER;
+import org.example.enums.STAFF;
 
 import java.util.List;
 
@@ -8,26 +9,17 @@ public class Principal extends Staff{
     List<Student> studentList;
     List<Classes> classesList;
 
-    public Principal(String name, int age, GENDER gender, boolean isPresent, List<Student> studentList, List<Classes> classesList) {
-        super(name, age, gender, isPresent);
+    public Principal(String name, int age, GENDER gender, boolean isPresent, STAFF role, List<Student> studentList, List<Classes> classesList) {
+        super(name, age, gender, isPresent, role);
         this.studentList = studentList;
         this.classesList = classesList;
     }
-    public Principal(String name, int age, GENDER gender, boolean isPresent) {
-        super(name, age, gender, isPresent);
+    public Principal(String name, int age, GENDER gender, boolean isPresent, STAFF role) {
+        super(name, age, gender, isPresent, role);
     }
     public Principal(){
 
     }
-
-//    private static Principal singleInstance = new Principal();
-//    public static Principal getSingleInstance() {
-//        if (singleInstance == null) {
-//            singleInstance = new Principal();
-//
-//        }
-//        return singleInstance;
-//    }
 
     public List<Student> getStudentList() {
         return studentList;
