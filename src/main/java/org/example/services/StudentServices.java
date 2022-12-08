@@ -4,6 +4,6 @@ import org.example.model.School;
 import org.example.model.Student;
 
 public interface StudentServices{
-    String canTakeCourse(String courseCode, School school, Student student);
+    void canTakeCourse(String courseCode, String courseTitle, Student student);
 
 }
