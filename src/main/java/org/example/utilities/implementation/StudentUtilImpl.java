@@ -131,7 +131,7 @@ public class StudentUtilImpl implements StudentUtils {
                 student.getCourseList().add(new Course(courseTitle, courseCode));
             }
         }
-        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("src/main/resources/TeacherList.csv"))){
+        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(FILE))){
             StringBuilder stringBuilder = new StringBuilder();
             for (String header : headerList) {
                 stringBuilder.append(header).append(",");
