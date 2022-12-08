@@ -27,9 +27,8 @@ public class Course {
 
     @Override
     public String toString() {
-        return "Course{" +
-                "courseTitle='" + courseTitle + '\'' +
-                ", courseCode='" + courseCode + '\'' +
-                '}';
+        return
+                "courseTitle: " + courseTitle +
+                ", courseCode: " + courseCode;
     }
 }

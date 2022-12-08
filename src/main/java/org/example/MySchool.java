@@ -1,15 +1,13 @@
 package org.example;
-
 import org.example.enums.GENDER;
 import org.example.enums.STAFF;
 import org.example.model.*;
 import org.example.services.implementation.PrincipalImpl;
 import org.example.services.implementation.StudentImpl;
 import org.example.services.implementation.TeacherImpl;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import org.example.utilities.implementation.CourseUtilImpl;
+import org.example.utilities.implementation.StaffUtilImpl;
+import org.example.utilities.implementation.StudentUtilImpl;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -48,37 +46,27 @@ public class MySchool {
         teacherList.addAll(Arrays.asList(teacher2, teacher1));
 
         Principal principal = new Principal("Mr. Fadipe", 50, GENDER.MALE, true, STAFF.PRINCIPAL,scienceStudentList,classesList);
-        Applicant applicant1 = new Applicant("Adebisi", 30, GENDER.MALE, classesList);
+        Applicant applicant1 = new Applicant("Adebisi", 12, GENDER.MALE, "100L");
+        Applicant applicant2 = new Applicant("Adebayo Faleti", 14, GENDER.MALE, "200L");
 
         School school = new School("SOS",teacherList,scienceStudentList,classesList,scienceCourseList,principal,applicant1);
-        System.out.println(teacherImpl.canTeachCourse("ENG102", scienceCourseList, teacher1));
-        System.out.println(studentImpl.canTakeCourse("GOV101", school, s1));
-        System.out.println(principalImpl.canExpelStudent("good", false, principal, s1));
-        System.out.println(principalImpl.canExpelStudent("bad", false, principal, s2));
-        principalImpl.canAdmitApplicant(applicant1, principal);
 
-        File file = new File("demo.txt");
 
-        try{
-            FileInputStream fileInputStream = new FileInputStream(file);
-            int data;
-            while((data = fileInputStream.read()) != -1){
-                System.out.print((char) data);
-            }
-            System.out.println();
-            fileInputStream.close();
-        }
-        catch (Exception e){
-            System.out.println(e);
-        }
-        try{
-            FileOutputStream fileOutputStream = new FileOutputStream("demo2.txt", true);
-            fileOutputStream.write(66);
-            System.out.println("File saved");
-            fileOutputStream.close();
-        }
-        catch (Exception e){
-            System.out.println(e);
-        }
+        StaffUtilImpl staffUtil = new StaffUtilImpl();
+        CourseUtilImpl courseUtil = new CourseUtilImpl();
+        StudentUtilImpl studentUtil = new StudentUtilImpl();
+        List<Student> studentList = studentUtil.readStudentList();
+        List<Teacher> teachers = staffUtil.readTeacherDetails();
+        Principal principal1 = staffUtil.readPrincipalDetails();
+        System.out.println(principal1);
+        List<Course> courseList = courseUtil.readCourseList();
+        teachers.forEach(System.out::println);
+        courseList.forEach(System.out::println);
+        teacherImpl.teachCourse("GEO101", "Geology", teachers.get(1));
+        studentList.forEach(System.out::println);
+        System.out.println(studentUtil.readHeader());
+//        principalImpl.expelStudent("Bad", true, principal1, studentList.get(1));
+//        System.out.println(principalImpl.canAdmitApplicant(applicant1, principal1));
+//        principalImpl.admitApplicant(applicant2, principal1);
     }
 }

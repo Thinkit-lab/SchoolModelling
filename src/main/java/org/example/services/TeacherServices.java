@@ -8,5 +8,5 @@ import java.util.List;
 
 
 public interface TeacherServices {
-    String canTeachCourse(String courseCode, List<Course> courseList, Teacher teacher);
+    void teachCourse(String courseCode, String courseTitle, Teacher teacher);
 }

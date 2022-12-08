@@ -58,9 +58,10 @@ public class Student extends Users{
 
     @Override
     public String toString() {
-        return "Student{" +
-                "studentClass='" + studentClass + '\'' +
-                ", courseList=" + courseList +
-                '}';
+        return super.toString() +
+                ", studentClass: " + studentClass +
+                ", courseList: " + courseList +
+                ", behaviour: " + behaviour +
+                ", violateRule: " + violateRule;
     }
 }

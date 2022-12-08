@@ -38,12 +38,8 @@ public class Principal extends Staff{
     }
 
 
-
     @Override
     public String toString() {
-        return "Principal{" +
-                "studentList=" + studentList +
-                ", classesList=" + classesList +
-                '}';
+        return "Principal: " + super.toString();
     }
 }

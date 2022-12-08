@@ -7,7 +7,7 @@ public class School {
     private List<Teacher> teacherList;
     private List<Student> studentList;
     private List<Classes> classesList;
-    private List<Course> courseList;
+    private static List<Course> courseList;
     private Staff principal;
     private Applicant applicant;
 

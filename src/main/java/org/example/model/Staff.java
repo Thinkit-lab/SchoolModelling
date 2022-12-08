@@ -3,7 +3,7 @@ package org.example.model;
 import org.example.enums.GENDER;
 import org.example.enums.STAFF;
 
-public abstract class Staff extends Users{
+public class Staff extends Users{
     private boolean isPresent;
     private STAFF role;
 
@@ -37,11 +37,9 @@ public abstract class Staff extends Users{
         this.role = role;
     }
 
+
     @Override
     public String toString() {
-        return "Staff{" +
-                "isPresent=" + isPresent +
-                ", role=" + role +
-                '}';
+        return super.toString()+ " role " + role+" isPresent: " + isPresent;
     }
 }

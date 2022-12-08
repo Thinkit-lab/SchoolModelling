@@ -28,11 +28,11 @@ public class Teacher extends Staff{
 
 
 
+//name...age...gender...
+
 
     @Override
     public String toString() {
-        return "Teacher{" +
-                "course=" + teacherCourseList +
-                '}';
+        return super.toString()+" teacherCourseList=" + teacherCourseList ;
     }
 }

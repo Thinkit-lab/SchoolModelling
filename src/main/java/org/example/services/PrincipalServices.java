@@ -3,7 +3,7 @@ import org.example.model.*;
 
 
 public interface PrincipalServices {
-    String canExpelStudent(String behaviour, boolean violateRule, Principal principal, Student student);
-    String canAdmitApplicant(Applicant applicant, Staff principal);
+    void expelStudent(String behaviour, boolean violateRule, Principal principal, Student student);
+    void admitApplicant(Applicant applicant, Staff principal);
 
 }

@@ -1,30 +1,26 @@
 package org.example.services.implementation;
-
-import org.example.model.Course;
-import org.example.model.School;
 import org.example.model.Teacher;
-
-import java.util.List;
+import org.example.services.TeacherServices;
+import org.example.utilities.implementation.StaffUtilImpl;
 import java.util.Objects;
 
 
-public class TeacherImpl {
+public class TeacherImpl implements TeacherServices {
     private static TeacherImpl singleInstance = new TeacherImpl();
+    private final StaffUtilImpl staffUtil = new StaffUtilImpl();
 
     public static TeacherImpl getSingleInstance() {
         if (singleInstance == null) {
             singleInstance = new TeacherImpl();
-
         }
         return singleInstance;
     }
-    public String canTeachCourse(String courseCode, List<Course> courseList, Teacher teacher) {
-        for(int i=0; i<courseList.size(); i++ ) {
+    public void teachCourse(String courseCode, String courseTitle, Teacher teacher) {
+        for(int i=0; i<teacher.getCourse().size(); i++ ) {
             if(Objects.equals(teacher.getCourse().get(i).getCourseCode(), courseCode)){
-                return teacher.getName() + " can teach " + courseCode;
+                System.out.println(courseCode + " is already available for " + teacher.getName());
             }
-
         }
-        return  teacher.getName() + " cannot teach " + courseCode;
+        staffUtil.addCourseToTeacher(teacher, courseTitle, courseCode);
     }
 }
