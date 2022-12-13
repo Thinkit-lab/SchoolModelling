@@ -51,7 +51,7 @@ public class StaffUtilImpl implements StaffUtils {
         try(BufferedReader bufferedReader = new BufferedReader(new FileReader(FILE))){
             bufferedReader.readLine();
             String[] row = bufferedReader.readLine().split(",");
-            principal = new Principal(row[0], Integer.parseInt(row[1]), GENDER.valueOf(row[2]), Boolean.parseBoolean(row[3]), STAFF.valueOf(row[4]));
+            principal = new Principal(row[0], Integer.parseInt(row[1]), GENDER.valueOf(row[2]), Boolean.parseBoolean(row[3]), STAFF.valueOf(row[4]), row[5]);
         }
         catch (Exception e){
             e.printStackTrace();
@@ -69,18 +69,19 @@ public class StaffUtilImpl implements StaffUtils {
         try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("src/main/resources/TeacherList.csv"))){
             StringBuilder stringBuilder = new StringBuilder();
             StaffUtilImpl staffUtil1 = new StaffUtilImpl();
-            stringBuilder.append(staffUtil1.readPrincipalDetails().getName()).append("\t");
-            stringBuilder.append(staffUtil1.readPrincipalDetails().getAge()).append("\t");
-            stringBuilder.append(staffUtil1.readPrincipalDetails().getGender()).append("\t");
-            stringBuilder.append(staffUtil1.readPrincipalDetails().isPresent()).append("\t");
-            stringBuilder.append(staffUtil1.readPrincipalDetails().getRole());
+            stringBuilder.append(staffUtil1.readPrincipalDetails().getName()).append(",");
+            stringBuilder.append(staffUtil1.readPrincipalDetails().getAge()).append(",");
+            stringBuilder.append(staffUtil1.readPrincipalDetails().getGender()).append(",");
+            stringBuilder.append(staffUtil1.readPrincipalDetails().isPresent()).append(",");
+            stringBuilder.append(staffUtil1.readPrincipalDetails().getRole()).append(",");
+            stringBuilder.append("Null");
             stringBuilder.append("\n");
             for(Teacher list : teacherList) {
-                stringBuilder.append(list.getName()).append("\t");
-                stringBuilder.append(list.getAge()).append("\t");
-                stringBuilder.append(list.getGender()).append("\t");
-                stringBuilder.append(list.isPresent()).append("\t");
-                stringBuilder.append(list.getRole()).append("\t");
+                stringBuilder.append(list.getName()).append(",");
+                stringBuilder.append(list.getAge()).append(",");
+                stringBuilder.append(list.getGender()).append(",");
+                stringBuilder.append(list.isPresent()).append(",");
+                stringBuilder.append(list.getRole()).append(",");
                 stringBuilder.append(list.getCourse().stream().map(Course::getCourseCode).collect(Collectors.joining(" ", "[", "]")));
                 stringBuilder.append("\n");
             }

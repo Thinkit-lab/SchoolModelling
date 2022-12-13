@@ -58,13 +58,12 @@ public class MySchool {
         List<Student> studentList = studentUtil.readStudentList();
         List<Teacher> teachers = staffUtil.readTeacherDetails();
         Principal principal1 = staffUtil.readPrincipalDetails();
-        System.out.println(principal1);
         List<Course> courseList = courseUtil.readCourseList();
         teachers.forEach(System.out::println);
-        courseList.forEach(System.out::println);
-        teacherImpl.teachCourse("GEO101", "Geology", teachers.get(1));
-        studentList.forEach(System.out::println);
-        System.out.println(studentUtil.readHeader());
+//        courseList.forEach(System.out::println);
+//        teacherImpl.teachCourse("GEO101", "Geology", teachers.get(0));
+//        studentList.forEach(System.out::println);
+//        System.out.println(studentUtil.readHeader());
 //        principalImpl.expelStudent("Bad", true, principal1, studentList.get(1));
 //        System.out.println(principalImpl.canAdmitApplicant(applicant1, principal1));
 //        principalImpl.admitApplicant(applicant2, principal1);

@@ -8,14 +8,16 @@ import java.util.List;
 public class Principal extends Staff{
     List<Student> studentList;
     List<Classes> classesList;
+    private String course;
 
     public Principal(String name, int age, GENDER gender, boolean isPresent, STAFF role, List<Student> studentList, List<Classes> classesList) {
         super(name, age, gender, isPresent, role);
         this.studentList = studentList;
         this.classesList = classesList;
     }
-    public Principal(String name, int age, GENDER gender, boolean isPresent, STAFF role) {
+    public Principal(String name, int age, GENDER gender, boolean isPresent, STAFF role, String course) {
         super(name, age, gender, isPresent, role);
+        this.course = course;
     }
     public Principal(){
 

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CourseUtilImpl implements CourseUtils {
-    public final String COURSEFILE = "src/main/resources/CourseDetails.csv";
+    private final String COURSEFILE = "src/main/resources/CourseDetails.csv";
     public List<Course> readCourseList(){
             List<Course> courseList = new ArrayList<>();
             String line = "";

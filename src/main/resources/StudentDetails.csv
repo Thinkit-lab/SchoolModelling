@@ -1,8 +1,7 @@
-Name,Age,Gender,Class,Course List,Behaviour,Violate Rules
-Michael Oyetunji,15,MALE,100L,MTH102 ENG102,Good,FALSE
-Christopher Daniels,13,MALE,100L,MTH102 ENG102,Good,FALSE
-Jessica Rachael,16,MALE,200L,PHY101 CSS202,Good,FALSE
-Matthew Ayinla,12,MALE,100L,MTH102 ENG102,Good,FALSE
-Ashley Bobby,14,FEMALE,200L,PHIL102 ESR201,Good,FALSE
-Jennifer Rita,13,FEMALE,200L,PHIL102 ESR201,Good,FALSE
-Joshua Gold,15,FEMALE,100L,MTH102 ENG102,Good,FALSE
+Christopher Daniels,13,MALE,100L,MTH102 ENG102,Good,false,
+Jessica Rachael,16,MALE,200L,PHY101 CSS202,Good,false
+Matthew Ayinla,12,MALE,100L,MTH102 ENG102,Good,false
+Ashley Bobby,14,FEMALE,200L,PHIL102 ESR201,Good,false
+Jennifer Rita,13,FEMALE,200L,PHIL102 ESR201,Good,false
+Joshua Gold,15,FEMALE,100L,MTH102 ENG102,Good,false
+Adebayo Faleti,14,MALE,200L,MTH101 PHY101,Good,false
